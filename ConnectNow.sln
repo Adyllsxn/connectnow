@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{8B6A8A75-1D40-40AA-A29D-DA922D03062A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "backend", "backend", "{EA0FDEB6-5F66-4584-B14E-5A6D0FAEB31A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnectionNow", "src\backend\ConnectionNow\ConnectionNow.csproj", "{CACFDC9E-597C-4E4F-BF44-AD24D1A3A3AE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CACFDC9E-597C-4E4F-BF44-AD24D1A3A3AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CACFDC9E-597C-4E4F-BF44-AD24D1A3A3AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CACFDC9E-597C-4E4F-BF44-AD24D1A3A3AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CACFDC9E-597C-4E4F-BF44-AD24D1A3A3AE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{EA0FDEB6-5F66-4584-B14E-5A6D0FAEB31A} = {8B6A8A75-1D40-40AA-A29D-DA922D03062A}
+		{CACFDC9E-597C-4E4F-BF44-AD24D1A3A3AE} = {EA0FDEB6-5F66-4584-B14E-5A6D0FAEB31A}
+	EndGlobalSection
+EndGlobal
