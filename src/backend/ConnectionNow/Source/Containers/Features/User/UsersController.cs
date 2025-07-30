@@ -11,7 +11,9 @@ public class UsersController(IUserRepository repository) : ControllerBase
     public async Task<ActionResult> ListUser(CancellationToken token)
     {
         var users = await repository.GetAllAsync(token);
-        return Ok(users);
+        return Ok(users.Select(u => new {
+            u.Id, u.UserName, u.Email, u.ChatRoom
+        }));
     }
     #endregion
 
