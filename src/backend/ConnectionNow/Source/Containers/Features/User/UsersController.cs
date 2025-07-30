@@ -1,6 +1,8 @@
-namespace ConnectionNow.Source.Containers.Controllers;
+namespace ConnectionNow.Source.Containers.Features.User;
 [ApiController]
-[Route("api/")]
+[Route("api/users")]
+[Authorize]
+
 public class UsersController(IUserRepository repository) : ControllerBase
 {
     #region List
@@ -33,16 +35,6 @@ public class UsersController(IUserRepository repository) : ControllerBase
     {
         var result = await repository.GetByNameAsync(name, token);
         return Ok(result);
-    }
-    #endregion
-
-    #region Create
-    [HttpPost("CreateUser")]
-    [EndpointSummary("Create a new user")]
-    public async Task<ActionResult> CreateUser([FromBody] UserModel model, CancellationToken token)
-    {
-        var created = await repository.CreateAsync(model, token);
-        return Ok(created);
     }
     #endregion
 

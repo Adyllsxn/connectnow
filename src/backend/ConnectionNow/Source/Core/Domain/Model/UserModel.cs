@@ -13,6 +13,9 @@ public class UserModel
     [StringLength(150, ErrorMessage = "Email can't be longer than 150 characters")]
     public string Email { get; set; } = string.Empty;
 
+    [Required(ErrorMessage = "Password is required")]
+    public string PasswordHash { get; set; } = string.Empty;
+
     [Required(ErrorMessage = "ChatRoom is required")]
     [StringLength(20, ErrorMessage = "ChatRoom can't be longer than 20 characters")]
     public string ChatRoom { get; set; } = string.Empty;
