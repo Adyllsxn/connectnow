@@ -6,6 +6,7 @@ global using System.ComponentModel.DataAnnotations;
 global using Microsoft.OpenApi.Models;
 global using Microsoft.AspNetCore.Mvc;
 global using Microsoft.EntityFrameworkCore;
+global using Microsoft.AspNetCore.Authorization;
 #endregion
 
 #region ConnectionNow
@@ -17,4 +18,7 @@ global using ConnectionNow.Source.Core.Infrastructure.Configuration;
 global using ConnectionNow.Source.Core.Infrastructure.Data.Context;
 global using ConnectionNow.Source.Core.Infrastructure.Data.Repositories;
 global using ConnectionNow.Source.Core.Infrastructure.Data.UoW;
+global using ConnectionNow.Source.Core.Application.Interface;
+global using ConnectionNow.Source.Core.Application.Service;
+global using ConnectionNow.Source.Core.Application.Configuration;
 #endregion
