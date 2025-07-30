@@ -8,9 +8,34 @@ public class AuthController(IAuthService authService) : ControllerBase
     public async Task<ActionResult> Login([FromBody] LoginRequest request, CancellationToken token)
     {
         var user = await authService.AuthenticateAsync(request.Email, request.Password, token);
-        return user is null
-            ? Unauthorized("Invalid credentials")
-            : Ok(new { user.Id, user.UserName, user.Email, user.ChatRoom });
+        if (user is null)
+            return Unauthorized("Invalid credentials");
+
+        var jwt = authService.GenerateJwtToken(user);
+        // Adicionar JWT como cookie
+        Response.Cookies.Append("jwt", jwt, new CookieOptions
+        {
+            HttpOnly = true,
+            Secure = false, // ❗ Ativa apenas se for HTTPS
+            SameSite = SameSiteMode.Strict,
+            Expires = DateTimeOffset.UtcNow.AddHours(1)
+        });
+        return Ok(new
+        {
+            user.Id,
+            user.UserName,
+            user.Email,
+            user.ChatRoom
+        });
+    }
+    #endregion
+
+    #region Logout
+    [HttpPost("Logout")]
+    public IActionResult Logout()
+    {
+        Response.Cookies.Delete("jwt");
+        return Ok("Logged out");
     }
     #endregion
 

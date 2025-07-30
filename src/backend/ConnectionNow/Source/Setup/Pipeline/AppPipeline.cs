@@ -6,6 +6,7 @@ public static class AppPipeline
         app.UseHttpsRedirection();
         app.UseSweggerExtensions();
         app.UseAuthorization();
+        app.UseAuthorization();
         app.MapControllers();
     }
 }
